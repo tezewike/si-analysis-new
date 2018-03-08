@@ -8,7 +8,7 @@ public class Volume extends Unit {
 	
 	public static DimensionArray DIMENSIONS = new DimensionArray().multiply(Length.DIMENSIONS, 3);
 
-	public final static Length LITER = new Length(
+	public final static Volume LITER = new Volume(
 			new String[] {"liter", "litre"},
 			new String[] {"L", "l"},
 			0.001);

@@ -1,6 +1,6 @@
 package units;
 
-public class DimensionArray implements Cloneable {
+public final class DimensionArray implements Cloneable {
 
 	public static int LENGTH_INDEX = 0;
 	public static int MASS_INDEX = 1;

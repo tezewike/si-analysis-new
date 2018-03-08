@@ -42,7 +42,7 @@ public class Time extends Unit {
 			new String[] {"a", "yr_J"},
 			3.15576E7);
 
-	public Time(String[] names, String[] symbols, double magnitude) {
+	private Time(String[] names, String[] symbols, double magnitude) {
 		super(names, symbols, magnitude, DIMENSIONS);
 	}
 

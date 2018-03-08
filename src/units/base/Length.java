@@ -62,7 +62,7 @@ public class Length extends Unit {
 			new String[] {"A"},
 			1.0E-10);
 	
-	public Length(String[] names, String[] symbols, double magnitude) {
+	private Length(String[] names, String[] symbols, double magnitude) {
 		super(names, symbols, magnitude, DIMENSIONS);
 	}
 

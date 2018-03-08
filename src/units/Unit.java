@@ -15,6 +15,8 @@ public abstract class Unit {
 		this.symbols = symbols;
 		this.magnitude = magnitude;
 		this.dimensions = dimensions;
+		
+		// TODO - Throw exception if getName() is already in hashmap of units
 	}
 
 	public double getMagnitude() {

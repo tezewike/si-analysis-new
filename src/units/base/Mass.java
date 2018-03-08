@@ -32,7 +32,7 @@ public class Mass extends Unit {
 			new String[] {"lb_m", "lbm"},
 			0.45359237);
 
-	public Mass(String[] names, String[] symbols, double magnitude) {
+	private Mass(String[] names, String[] symbols, double magnitude) {
 		super(names, symbols, magnitude, DIMENSIONS);
 	}
 
