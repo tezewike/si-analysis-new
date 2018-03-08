@@ -20,9 +20,14 @@ public class UnitSystem {
 	public static int AMOUNT_INDEX = 5;
 	public static int LUMIN_INDEX = 6;
 	
+	public static final UnitSystem NONE = null;
 	
-	public static final Unit[] INTERNATIONAL_SYSTEM = new Unit[] {Length.METER, Mass.KILOGRAM, Time.SECOND,
-			Current.AMPERE, Tempurature.KELVIN, Amount.MOLE, Luminosity.CANDELA};
+	public static final UnitSystem INTERNATIONAL_SYSTEM = new UnitSystem(Length.METER, Mass.KILOGRAM, Time.SECOND,
+			Current.AMPERE, Tempurature.KELVIN, Amount.MOLE, Luminosity.CANDELA);
+	
+	public static final UnitSystem CENTIMETER_GRAM_SECOND = new UnitSystem(Length.CENTIMETER, Mass.GRAM, Time.SECOND,
+			Current.AMPERE, Tempurature.KELVIN, Amount.MOLE, Luminosity.CANDELA);
+	
 	
 	private UnitSystem(Length length, Mass mass, Time time, Current current, Tempurature temp, Amount amount, Luminosity luminosity) {
 		this.systemArray = new Unit[] { length, mass, time, current, temp, amount, luminosity };

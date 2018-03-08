@@ -13,7 +13,7 @@ public class DimensionArray implements Cloneable {
 	private int[] dimensions;
 	public static int ARRAY_LENGTH = 7;
 	
-	private DimensionArray() {
+	public DimensionArray() {
 		this.dimensions = new int[ARRAY_LENGTH];
 	}
 	
