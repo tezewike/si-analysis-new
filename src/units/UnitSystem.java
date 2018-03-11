@@ -12,14 +12,6 @@ public class UnitSystem {
 
 	private Unit[] systemArray;
 	
-	public static int LENGTH_INDEX = 0;
-	public static int MASS_INDEX = 1;
-	public static int TIME_INDEX = 2;
-	public static int CURRENT_INDEX = 3;
-	public static int TEMP_INDEX = 4;
-	public static int AMOUNT_INDEX = 5;
-	public static int LUMIN_INDEX = 6;
-	
 	public static final UnitSystem NONE = null;
 	
 	public static final UnitSystem INTERNATIONAL_SYSTEM = new UnitSystem(Length.METER, Mass.KILOGRAM, Time.SECOND,
@@ -34,6 +26,10 @@ public class UnitSystem {
 	}
 	
 	public Unit[] getUnitSystem() {
+		if (systemArray == null) {
+			return null;
+		}
+		
 		return systemArray.clone();
 	}
 	

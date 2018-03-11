@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Length extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.LENGTH_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.LENGTH.ordinal());
 
 	public final static Length METER = new Length(
 			new String[] {"meter", "metre"},

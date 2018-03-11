@@ -2,16 +2,10 @@ package units;
 
 public final class DimensionArray implements Cloneable {
 
-	public static int LENGTH_INDEX = 0;
-	public static int MASS_INDEX = 1;
-	public static int TIME_INDEX = 2;
-	public static int CURRENT_INDEX = 3;
-	public static int TEMP_INDEX = 4;
-	public static int AMOUNT_INDEX = 5;
-	public static int LUMIN_INDEX = 6;
+	public static enum Index {LENGTH, MASS, TIME, CURRENT, TEMP, AMOUNT, LUMIN};
+	public static final int ARRAY_LENGTH = Index.values().length;
 	
 	private int[] dimensions;
-	public static int ARRAY_LENGTH = 7;
 	
 	public DimensionArray() {
 		this.dimensions = new int[ARRAY_LENGTH];

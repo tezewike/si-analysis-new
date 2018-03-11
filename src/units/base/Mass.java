@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Mass extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.MASS_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.MASS.ordinal());
 
 	public final static Mass KILOGRAM = new Mass(
 			new String[] {"kilogram", "kilogramme"},

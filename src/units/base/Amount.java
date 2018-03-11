@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Amount extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.AMOUNT_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.AMOUNT.ordinal());
 
 	public final static Amount MOLE = new Amount(
 			new String[] { "mole" },

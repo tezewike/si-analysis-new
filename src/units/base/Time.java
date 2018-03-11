@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Time extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.TIME_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.TIME.ordinal());
 
 	public final static Time SECOND = new Time(
 			new String[] {"second"},

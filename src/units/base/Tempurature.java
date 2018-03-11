@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Tempurature extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.TEMP_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.TEMP.ordinal());
 
 	public final static Tempurature KELVIN = new Tempurature(
 			new String[] {"kelvin"},

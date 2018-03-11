@@ -5,7 +5,7 @@ import units.Unit;
 
 public class Luminosity extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.LUMIN_INDEX);
+	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.LUMIN.ordinal());
 
 	public final static Luminosity CANDELA = new Luminosity(
 			new String[] { "candela" },
