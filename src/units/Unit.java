@@ -5,10 +5,10 @@ import java.util.List;
 
 public abstract class Unit {
 
-	protected String[] names;
-	protected String[] symbols;
-	protected DimensionArray dimensions;
-	protected double magnitude;	
+	protected final String[] names;
+	protected final String[] symbols;
+	protected final DimensionArray dimensions;
+	protected final double magnitude;	
 
 	protected Unit(String[] names, String[] symbols, double magnitude, DimensionArray dimensions) {
 		this.names = names;

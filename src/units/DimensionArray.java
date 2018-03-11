@@ -67,6 +67,10 @@ public final class DimensionArray implements Cloneable {
 	public DimensionArray reciprocate() {
 		return this.exponentiate(-1);
 	}
+	
+	public int getExponent(int i) {
+		return this.dimensions[i];
+	}
 
 	@Override
 	public boolean equals(Object obj) {

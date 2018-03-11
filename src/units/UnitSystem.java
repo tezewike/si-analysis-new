@@ -34,7 +34,7 @@ public class UnitSystem {
 	}
 	
 	public Unit[] getUnitSystem() {
-		return systemArray;
+		return systemArray.clone();
 	}
 	
 }
