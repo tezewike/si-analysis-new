@@ -20,7 +20,6 @@ public class UnitSystem {
 	public static final UnitSystem CENTIMETER_GRAM_SECOND = new UnitSystem(Length.CENTIMETER, Mass.GRAM, Time.SECOND,
 			Current.AMPERE, Tempurature.KELVIN, Amount.MOLE, Luminosity.CANDELA);
 	
-	
 	private UnitSystem(Length length, Mass mass, Time time, Current current, Tempurature temp, Amount amount, Luminosity luminosity) {
 		this.systemArray = new Unit[] { length, mass, time, current, temp, amount, luminosity };
 	}

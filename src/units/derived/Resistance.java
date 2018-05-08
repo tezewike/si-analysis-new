@@ -2,12 +2,14 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 import units.base.Current;
 
 public class Resistance extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Potential.DIMENSIONS).multiply(Current.DIMENSIONS, -1);
+	public static final UnitType UNIT_TYPE = new UnitType(Resistance.class.getSimpleName(), DIMENSIONS);
 
 	public final static Resistance OHM = new Resistance(
 			new String[] {"ohm"},
@@ -20,7 +22,7 @@ public class Resistance extends Unit {
 			1.0E-9);
 	
 	private Resistance(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }

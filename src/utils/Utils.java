@@ -1,5 +1,6 @@
 package utils;
 
+import java.text.DecimalFormat;
 
 public class Utils {
 
@@ -33,4 +34,13 @@ public class Utils {
         return output;
     }
     
+    public static String roundDouble(double num) {
+    	DecimalFormat normalNotation = new DecimalFormat("#0.######");
+    	DecimalFormat scientificNotation = new DecimalFormat("0.#####E0");
+    	
+    	if (num >= 1e6 || num < 1e-2)
+    		return scientificNotation.format(num);
+    	return normalNotation.format(num);
+    }
+
 }

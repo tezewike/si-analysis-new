@@ -21,7 +21,7 @@ public final class Prefix {
 	public static final Prefix DECI = new Prefix("deci", "d", 0.1);
 	public static final Prefix CENTI = new Prefix("centi", "c", 0.01);
 	public static final Prefix MILLI = new Prefix("milli", "m", 0.001);
-	public static final Prefix MICRO = new Prefix("micro", "u", 1.0E-6);
+	public static final Prefix MICRO = new Prefix("micro", "u", 1.0E-6); // TODO - setAlias()?
 	public static final Prefix NANO = new Prefix("nano", "n", 1.0E-9);
 	public static final Prefix PICO = new Prefix("pico", "p", 1.0E-12);
 	public static final Prefix FEMTO = new Prefix("femto", "f", 1.0E-15);

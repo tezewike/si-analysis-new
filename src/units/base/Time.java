@@ -2,10 +2,12 @@ package units.base;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Time extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.TIME.ordinal());
+	public static final DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.TIME.ordinal());
+	public static final UnitType UNIT_TYPE = new UnitType(Time.class.getSimpleName(), DIMENSIONS);
 
 	public final static Time SECOND = new Time(
 			new String[] {"second"},
@@ -43,7 +45,7 @@ public class Time extends Unit {
 			3.15576E7);
 
 	private Time(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 
 }

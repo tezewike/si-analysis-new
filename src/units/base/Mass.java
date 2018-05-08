@@ -2,10 +2,12 @@ package units.base;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Mass extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.MASS.ordinal());
+	public static final DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.MASS.ordinal());
+	public static final UnitType UNIT_TYPE = new UnitType(Mass.class.getSimpleName(), DIMENSIONS);
 
 	public final static Mass KILOGRAM = new Mass(
 			new String[] {"kilogram", "kilogramme"},
@@ -33,7 +35,7 @@ public class Mass extends Unit {
 			0.45359237);
 
 	private Mass(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 
 }

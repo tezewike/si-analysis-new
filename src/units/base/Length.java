@@ -2,10 +2,12 @@ package units.base;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Length extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.LENGTH.ordinal());
+	public static final DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.LENGTH.ordinal());
+	public static final UnitType UNIT_TYPE = new UnitType(Length.class.getSimpleName(), DIMENSIONS);
 
 	public final static Length METER = new Length(
 			new String[] {"meter", "metre"},
@@ -63,7 +65,7 @@ public class Length extends Unit {
 			1.0E-10);
 	
 	private Length(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 
 }

@@ -2,11 +2,13 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 import units.base.Length;
 
 public class Velocity extends Unit {
 	
-	public static DimensionArray DIMENSIONS = new DimensionArray().multiply(Length.DIMENSIONS, 3);
+	public static final DimensionArray DIMENSIONS = new DimensionArray().multiply(Length.DIMENSIONS, 3);
+	public static final UnitType UNIT_TYPE = new UnitType(Velocity.class.getSimpleName(), DIMENSIONS);
 
 	public final static Velocity SPEED_OF_LIGHT = new Velocity(
 			new String[] {"speed of light"},
@@ -24,7 +26,7 @@ public class Velocity extends Unit {
 			0.44704);
 	
 	private Velocity(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 
 }

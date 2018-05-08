@@ -2,11 +2,13 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Pressure extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Force.DIMENSIONS).multiply(Area.DIMENSIONS, -1);
+	public static final UnitType UNIT_TYPE = new UnitType(Pressure.class.getSimpleName(), DIMENSIONS);
 
 	public final static Pressure PASCAL = new Pressure(
 			new String[] {"pascal"},
@@ -44,7 +46,7 @@ public class Pressure extends Unit {
 			6894.757);
 	
 	private Pressure(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }

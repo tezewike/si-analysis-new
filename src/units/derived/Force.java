@@ -2,13 +2,15 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 import units.base.Mass;
 
 public class Force extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Mass.DIMENSIONS).multiply(Acceleration.DIMENSIONS);
-
+	public static final UnitType UNIT_TYPE = new UnitType(Force.class.getSimpleName(), DIMENSIONS);
+	
 	public final static Force NEWTON = new Force(
 			new String[] {"newton"},
 			new String[] {"N"},
@@ -35,7 +37,7 @@ public class Force extends Unit {
 			4.4482216152605);
 	
 	private Force(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }

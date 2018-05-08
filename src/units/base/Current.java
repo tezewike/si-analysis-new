@@ -2,10 +2,12 @@ package units.base;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Current extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.CURRENT.ordinal());
+	public static final DimensionArray DIMENSIONS = new DimensionArray(DimensionArray.Index.CURRENT.ordinal());
+	public static final UnitType UNIT_TYPE = new UnitType(Current.class.getSimpleName(), DIMENSIONS);
 	
 	public final static Current AMPERE = new Current(
 			new String[] {"ampere", "amp"},
@@ -18,7 +20,7 @@ public class Current extends Unit {
 			10.0);
 
 	private Current(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 
 }

@@ -2,11 +2,13 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 
 public class Capacitance extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Charge.DIMENSIONS).multiply(Potential.DIMENSIONS, -1);
+	public static final UnitType UNIT_TYPE = new UnitType(Capacitance.class.getSimpleName(), DIMENSIONS);
 
 	public final static Capacitance FARAD = new Capacitance(
 			new String[] {"farad"},
@@ -19,7 +21,7 @@ public class Capacitance extends Unit {
 			1.0E9);
 	
 	private Capacitance(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }

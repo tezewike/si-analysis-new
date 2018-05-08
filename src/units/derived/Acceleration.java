@@ -2,12 +2,14 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 import units.base.Time;
 
 public class Acceleration extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Velocity.DIMENSIONS).multiply(Time.DIMENSIONS, -1);
+	public static final UnitType UNIT_TYPE = new UnitType(Acceleration.class.getSimpleName(), DIMENSIONS);
 
 	public final static Acceleration GALILEO = new Acceleration(
 			new String[] {"galileo"},
@@ -20,7 +22,7 @@ public class Acceleration extends Unit {
 			9.80665);
 	
 	private Acceleration(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }

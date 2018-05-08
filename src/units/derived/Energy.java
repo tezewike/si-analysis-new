@@ -2,12 +2,14 @@ package units.derived;
 
 import units.DimensionArray;
 import units.Unit;
+import units.UnitType;
 import units.base.Length;
 
 public class Energy extends Unit {
 
-	public static DimensionArray DIMENSIONS = new DimensionArray()
+	public static final DimensionArray DIMENSIONS = new DimensionArray()
 			.multiply(Force.DIMENSIONS).multiply(Length.DIMENSIONS);
+	public static final UnitType UNIT_TYPE = new UnitType(Energy.class.getSimpleName(), DIMENSIONS);
 
 	public final static Energy JOULE = new Energy(
 			new String[] {"joule"},
@@ -40,7 +42,7 @@ public class Energy extends Unit {
 			3600.0);
 	
 	private Energy(String[] names, String[] symbols, double magnitude) {
-		super(names, symbols, magnitude, DIMENSIONS);
+		super(names, symbols, magnitude, UNIT_TYPE);
 	}
 	
 }
