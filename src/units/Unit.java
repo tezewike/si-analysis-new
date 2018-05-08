@@ -57,6 +57,10 @@ public abstract class Unit {
 		return newList;
 	}
 	
+	public UnitType getType() {
+		return this.unitType;
+	}
+	
 	public static Unit getUnit(String symbol) {
 		return Unit.map.get(symbol);
 	}

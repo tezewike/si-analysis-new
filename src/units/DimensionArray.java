@@ -75,6 +75,14 @@ public final class DimensionArray implements Cloneable {
 		return super.equals(obj);
 	}
 	
+	public boolean isEmpty() {
+		for (int i = 0; i < ARRAY_LENGTH; i++) {
+			if (dimensions[i] != 0)
+				return false;
+		}
+		return true;
+	}
+	
 	@Override
 	public Object clone() {
 		return new DimensionArray(this.dimensions);

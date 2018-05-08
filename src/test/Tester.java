@@ -1,6 +1,6 @@
 package test;
 
-import calculations.ExpressionBuilder;
+import calculations.FunctionBuilder;
 import units.Prefix;
 import units.base.Length;
 import units.derived.Volume;
@@ -9,25 +9,24 @@ import utils.Utils;
 public class Tester {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		testBuilder();
-		testFmt();
+	//	testFmt();
 	}
 
 	
 	public static void testBuilder() {
 		
-		ExpressionBuilder expressionBuilder = new ExpressionBuilder();
-		expressionBuilder.addUnit(Length.MILE).addUnit(Length.YARD).asDenominator();
-		System.out.println(expressionBuilder);
+		FunctionBuilder builder = new FunctionBuilder();
+		builder.appendObject(Length.MILE, true).appendObject(Length.YARD, true);
+		System.out.println(builder.build().toSimpleString());
 		
-		expressionBuilder = new ExpressionBuilder();
-		expressionBuilder.addUnit(Prefix.CENTI, Length.METER, 3).add(new ExpressionBuilder().addUnit(Prefix.MILLI, Volume.LITER).asDenominator());
-		System.out.println(expressionBuilder);
+		builder = new FunctionBuilder();
+		builder.appendObject(Prefix.CENTI, Length.METER, 3, false).appendObject(Prefix.MILLI, Volume.LITER, true);
+		System.out.println(builder.build().toSimpleString());
 		
-		expressionBuilder = new ExpressionBuilder();
-		expressionBuilder.addUnit(Prefix.MILLI, Volume.LITER);
-		System.out.println(expressionBuilder);
+		builder = new FunctionBuilder();
+		builder.appendObject(Prefix.MILLI, Volume.LITER, false);
+		System.out.println(builder.build().toSimpleString());
 		
 	}
 	
