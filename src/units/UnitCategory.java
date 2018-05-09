@@ -20,4 +20,7 @@ public class UnitCategory {
 	public static Class[] electrical;
 	public static Class[] temporal;
 	*/
+	
+	private UnitCategory() {}
+	
 }

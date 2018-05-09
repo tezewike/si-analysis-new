@@ -88,4 +88,23 @@ public final class DimensionArray implements Cloneable {
 		return new DimensionArray(this.dimensions);
 	}
 	
+	@Override
+	public String toString() {
+		String str = "";
+		
+		int exponent;
+		for (Index value : Index.values()) {
+			exponent = dimensions[value.ordinal()];
+			if (exponent != 0) {
+				str += value.toString() + "=" + exponent +",";
+			}
+		}
+		
+		if (!str.isEmpty()) {
+			str = str.substring(0, str.length() - 1);
+		}
+		
+		return getClass().getName() + "[" + str + "]";
+	}
+	
 }

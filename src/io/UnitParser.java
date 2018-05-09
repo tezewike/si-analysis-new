@@ -14,6 +14,9 @@ public class UnitParser {
 
 	// TODO - JSON utils and such
 
+	// Private constructor so that it cannot be initialized.
+	private UnitParser() {}
+	
 	public static List<FunctionObject> parseInput(String input) {
 		List<FunctionObject> objects = new ArrayList<>();
 		FunctionObject object = null;

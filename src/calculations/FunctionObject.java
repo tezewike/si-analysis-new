@@ -67,4 +67,9 @@ public class FunctionObject {
 		return Math.pow(value, exponent);
 	} 
 
+	@Override
+	public String toString() {
+		return getClass().getName() + "[unit=" + getSymbol() + ", exp=" + getExponent() + "]";
+	}
+	
 }

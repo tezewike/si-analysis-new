@@ -1,9 +1,10 @@
 package test;
 
 import calculations.FunctionBuilder;
+import units.DimensionArray;
 import units.Prefix;
-import units.base.Length;
-import units.derived.Volume;
+import units.base.*;
+import units.derived.*;
 import utils.Utils;
 
 public class Tester {
@@ -12,6 +13,8 @@ public class Tester {
 	//	testBuilder();
 		testParser();
 	//	testFmt();
+		
+		System.out.println(new DimensionArray().multiply(Power.DIMENSIONS, 1));
 	}
 
 	
