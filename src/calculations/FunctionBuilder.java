@@ -3,10 +3,14 @@ package calculations;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.UnitParser;
 import units.Prefix;
 import units.Unit;
 
 public class FunctionBuilder {
+
+	public final static boolean NUMERATOR = false;
+	public final static boolean DENOMINATOR = true;
 
 	private double numeratorMagnitude = 1.0;
 	private double denominatorMagnitude = 1.0;
@@ -28,22 +32,22 @@ public class FunctionBuilder {
 			this.denominatorUnits.add(object);
 		return this;
 	}
-	
+
 	public FunctionBuilder appendObject(Unit unit, boolean denominator) {
 		return appendObject(null, unit, 1, denominator);
 	}
-	
+
 	public FunctionBuilder appendObject(Prefix prefix, Unit unit, boolean denominator) {
 		return appendObject(prefix, unit, 1, denominator);
 	}
-	
+
 	public FunctionBuilder appendObject(Unit unit, int exponent, boolean denominator) {
 		return appendObject(null, unit, exponent, denominator);
 	}
-	
+
 	public FunctionBuilder appendObject(Prefix prefix, Unit unit, int exponent, boolean denominator) {
 		FunctionObject object = new FunctionObject(prefix, unit, exponent);
-		
+
 		if (!denominator)
 			this.numeratorUnits.add(object);
 		else
@@ -51,6 +55,16 @@ public class FunctionBuilder {
 		return this;
 	}
 
+	public FunctionBuilder appendObjectsFromInput(String input, boolean denominator) {
+		List<FunctionObject> objects = UnitParser.parseInput(input);
+		
+		if (!denominator)
+			this.numeratorUnits.addAll(objects);
+		else
+			this.denominatorUnits.addAll(objects);
+		return this;
+	}
+	
 	public FunctionGenerator build() {
 		return new FunctionGenerator(numeratorMagnitude, denominatorMagnitude, numeratorUnits, denominatorUnits);
 	}

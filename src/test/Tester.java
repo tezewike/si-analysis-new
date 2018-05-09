@@ -9,7 +9,8 @@ import utils.Utils;
 public class Tester {
 
 	public static void main(String[] args) {
-		testBuilder();
+	//	testBuilder();
+		testParser();
 	//	testFmt();
 	}
 
@@ -17,18 +18,38 @@ public class Tester {
 	public static void testBuilder() {
 		
 		FunctionBuilder builder = new FunctionBuilder();
-		builder.appendObject(Length.MILE, true).appendObject(Length.YARD, true);
-		System.out.println(builder.build().toSimpleString());
+		builder.appendObject(Length.MILE, FunctionBuilder.DENOMINATOR)
+				.appendObject(Length.YARD, FunctionBuilder.DENOMINATOR);
+		System.out.println(builder.build());
 		
 		builder = new FunctionBuilder();
-		builder.appendObject(Prefix.CENTI, Length.METER, 3, false).appendObject(Prefix.MILLI, Volume.LITER, true);
-		System.out.println(builder.build().toSimpleString());
+		builder.appendObject(Prefix.CENTI, Length.METER, 3, FunctionBuilder.NUMERATOR)
+				.appendObject(Prefix.MILLI, Volume.LITER, FunctionBuilder.DENOMINATOR);
+		System.out.println(builder.build());
 		
 		builder = new FunctionBuilder();
-		builder.appendObject(Prefix.MILLI, Volume.LITER, false);
-		System.out.println(builder.build().toSimpleString());
+		builder.appendObject(Prefix.MILLI, Volume.LITER, FunctionBuilder.NUMERATOR);
+		System.out.println(builder.build());
 		
 	}
+	
+	public static void testParser() {
+		
+		FunctionBuilder builder = new FunctionBuilder();
+		builder.appendObjectsFromInput("mi yd", FunctionBuilder.DENOMINATOR);
+		System.out.println(builder.build());
+		
+		builder = new FunctionBuilder();
+		builder.appendObjectsFromInput("cm^3", FunctionBuilder.NUMERATOR)
+				.appendObjectsFromInput("mL", FunctionBuilder.DENOMINATOR);
+		System.out.println(builder.build());
+		
+		builder = new FunctionBuilder();
+		builder.appendObjectsFromInput("mL", FunctionBuilder.NUMERATOR);
+		System.out.println(builder.build());
+		
+	}
+	
 	
 	public static void testFmt() {
 		System.out.println(Utils.roundDouble(4.3434534535));

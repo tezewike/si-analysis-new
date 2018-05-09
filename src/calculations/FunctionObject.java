@@ -16,6 +16,18 @@ public class FunctionObject {
 		this.exponent = exponent;
 	}
 	
+	public FunctionObject(Unit unit, int exponent) {
+		this(null, unit, exponent);
+	}
+	
+	public FunctionObject(Prefix prefix, Unit unit) {
+		this(prefix, unit, 1);
+	}
+	
+	public FunctionObject(Unit unit) {
+		this(null, unit, 1);
+	}
+	
 	public DimensionArray getDimensions() {
 		return unit.getDimensions().exponentiate(exponent);
 	}

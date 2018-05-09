@@ -1,8 +1,11 @@
 package units;
 
 import java.util.Comparator;
+import java.util.Hashtable;
 
 public final class Prefix {
+	
+	private static Hashtable<String, Prefix> map = new Hashtable<>();
 
 	private final String name;
 	private final String symbol;
@@ -33,6 +36,8 @@ public final class Prefix {
 		this.name = name;
 		this.symbol = symbol;
 		this.magnitude = magnitude;
+		
+		Prefix.map.put(symbol, this);
 	}
 
 	public String getName() {
@@ -45,6 +50,10 @@ public final class Prefix {
 
 	public double getMagnitude() {
 		return this.magnitude;
+	}
+	
+	public static Prefix get(String symbol) {
+		return map.get(symbol);
 	}
 
 	/**

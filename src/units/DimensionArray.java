@@ -62,8 +62,8 @@ public final class DimensionArray implements Cloneable {
 		return this.exponentiate(-1);
 	}
 	
-	public int getExponent(int i) {
-		return this.dimensions[i];
+	public int getExponent(int index) {
+		return this.dimensions[index];
 	}
 
 	@Override
